@@ -1,0 +1,68 @@
+import pyautogui
+import time
+import os
+import pandas as pd
+import numpy
+
+pyautogui.PAUSE=1 # a cada comando, aguardar 1s.
+
+# 1 - abrir o sistema da empresa
+pyautogui.press("win") #abrir a janela windows
+pyautogui.write("chrome") #digitar na janela "chrome" 
+pyautogui.press("enter")
+#há + de um perfil no chrome, preciso selecionar a janela correta pressionando tab 7x até chegar na pg requerida
+for _ in range(7):
+    pyautogui.press("tab")
+pyautogui.press("enter")
+
+pyautogui.hotkey("ctrl", "t") #apertar teclas simumltaneamente para executar algum comando
+pyautogui.write("https://dlp.hashtagtreinamentos.com/python/intensivao/login") #escrever o meu link na barra de url
+pyautogui.press("enter")
+
+# 2 - fazer login
+pyautogui.press("tab")  
+pyautogui.write("kris_legal@gmail.com") # inserir um e-mail
+pyautogui.press("tab")
+pyautogui.write("agora") # inserir senha
+pyautogui.press("enter")
+
+# 3 - importar a base de dados (pandas e openpyxl)
+tabela= pd.read_csv("produtos.csv") # lê arquivos em diversos formatos
+
+# 4 - cadastrar um produto    
+for linha in tabela.index:
+    pyautogui.click(x=628, y=436) # clicar na posição exata que pretendo acessar alguma informação
+    codigo=tabela.loc[linha,"codigo"]
+    pyautogui.write(codigo) #necessário pressionar tab uma vez
+    pyautogui.press("tab")
+ 
+    marca=tabela.loc[linha,"marca"]
+    pyautogui.write(marca)
+    pyautogui.press("tab")
+
+    tipo=tabela.loc[linha,"tipo"]
+    pyautogui.write(tipo)
+    pyautogui.press("tab")
+
+    categoria=tabela.loc[linha,"categoria"] 
+    pyautogui.write(str(categoria))
+    pyautogui.press("tab")
+
+    preco_unitario=tabela.loc[linha,"preco_unitario"]
+    pyautogui.write(str(preco_unitario))
+    pyautogui.press("tab")
+
+    custo=tabela.loc[linha,"custo"]
+    pyautogui.write(str(custo))
+    pyautogui.press("tab")
+
+    obs = tabela.loc[linha, "obs"]
+    if pd.notna(obs):  # nan -> not a number (vazio) pd.isna -> identificar valor nan ou notna
+        pyautogui.write(str(obs))
+    else:
+        pyautogui.press("tab")
+    
+    pyautogui.press("enter")
+    pyautogui.scroll(500) # subir a página | para desce utilizar sinal de subtração
+    
+pyautogui.alert("Produtos cadastrados com sucesso!") # insere pop up com mensagem 
