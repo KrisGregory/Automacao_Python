@@ -94,6 +94,6 @@ Criação de scripts práticos e reutilizáveis para o ambiente de trabalho
 ## 👤 Autora
 **Krisley Gregory**  
 Análise & Governança de Dados | Inteligência Operacional  
-📍 [LinkedIn](https://linkedin.com/in/krisleygregory)]
-📊 [GitHub](https://github.com/krisleygregory)]
+📍 [LinkedIn](https://linkedin.com/in/krisleygregory)
+📊 [GitHub](https://github.com/krisleygregory)
 
