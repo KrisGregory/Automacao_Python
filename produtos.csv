@@ -1,0 +1,6 @@
+﻿codigo,marca,tipo,categoria,preco_unitario,custo,obs
+P001,TechPro,Mouse,Periférico,59.9,35.0,Design ergonômico
+P002,DataPlus,Teclado,Periférico,129.9,80.0,Mecânico retroiluminado
+P003,InfoMax,Monitor,Display,899.0,550.0,Full HD 24 polegadas
+P004,CodeWare,HD Externo,Armazenamento,349.9,220.0,1TB USB 3.0
+P005,PyTools,Webcam,Periférico,199.0,120.0,Com microfone embutido
