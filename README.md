@@ -33,3 +33,8 @@ A automação foi desenvolvida com foco em **eficiência, clareza e aplicabilida
 ---
 
 ## 📂 Estrutura do Projeto
+📦 Automacao_Cadastro_Produtos
+ ┣ 📄 automacao_cadastro.py
+ ┣ 📄 produtos.csv
+ ┗ 📄 README.md
+
